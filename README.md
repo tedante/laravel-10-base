@@ -2,6 +2,16 @@
 
 This is a fresh install of [Laravel](https://laravel.com/) 10 with a docker-compose file. This is a simple way to get a Laravel 10 project up and running with Docker.
 
+# Getting Started
+
+To get started, you will need to have [Docker](https://www.docker.com/) installed on your machine. Once you have Docker installed, you can clone this repository and run the following command to start the project:
+
+```bash
+docker-compose up -d
+```
+
+This will start the project and you can access it at [http://localhost:8080](http://localhost:8080).
+
 
 ## License
 

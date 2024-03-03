@@ -8,9 +8,11 @@ RUN apt update && apt install -y \
     curl \
     libpng-dev \
     libonig-dev \
+    libzip-dev \
     libxml2-dev
+
 RUN apt clean && rm -rf /var/lib/apt/lists/*
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -21,3 +23,8 @@ RUN mkdir -p /home/$user/.composer && \
 WORKDIR /var/www
 
 USER $user
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+# docker-compose exec app rm -rf vendor composer.lock
+# docker-compose exec app composer install
