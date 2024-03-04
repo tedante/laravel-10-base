@@ -8,6 +8,12 @@ if ! command -v php >/dev/null; then
   exit 1
 fi
 
+if ! command -v docker >/dev/null; then
+  echo "docker is not installed on your machine" 
+
+  exit 1
+fi
+
 echo "Installation Requirements met"
 
 echo "Installing laravel-10-base"
