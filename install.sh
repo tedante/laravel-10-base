@@ -29,10 +29,6 @@ if command -v docker >/dev/null; then
   echo "Building Docker Image"
 
   docker compose up -d
-  docker compose exec app composer install
-  docker compose exec app php artisan key:generate
-  docker compose exec app php artisan migrate
-  docker compose exec app php artisan db:seed
 else 
   echo "Docker is not installed on your machine"
   echo "If you aren't using docker, please see the readme for instructions on how to run the application without docker"
