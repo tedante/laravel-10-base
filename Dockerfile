@@ -25,7 +25,3 @@ WORKDIR /var/www
 USER $user
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
-
-# docker compose exec app rm -rf vendor composer.lock
-# docker compose exec app composer install
-# docker compose exec app php artisan key:generate
