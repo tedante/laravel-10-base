@@ -9,6 +9,8 @@ Route::prefix('v1')->group(function () {
         return response()->json(["message" => "pong"]);
     });
 
+    Route::post("register", [App\Http\Controllers\AuthController::class, "register"]);
+
     Route::get('/user', function (Request $request) {
         return $request->user();
     })->middleware('auth:sanctum');

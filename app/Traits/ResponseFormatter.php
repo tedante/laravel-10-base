@@ -4,7 +4,7 @@ namespace App\Traits;
 
 trait ResponseFormatter
 {
-  protected function success($data, $message = "success", $code)
+  protected function success($data, $message = "success", $code = 200)
   {
     $payload = [
       'status' => 'success',
