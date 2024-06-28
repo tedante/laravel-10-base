@@ -2,20 +2,20 @@
 
 This is a fresh install of [Laravel](https://laravel.com/) 10 with a docker-compose file. This is a simple way to get a Laravel 10 project up and running with Docker.
 
-# Getting Started
+# Installation with Docker
 
 To get started, you will need to have [Docker](https://www.docker.com/) installed on your machine. Once you have Docker installed, you can follow the steps below.
 
-## Installation via Bash Script
+## Via Bash Script
 
 * Run this on your terminal 
 ```bash
-curl -s https://raw.githubusercontent.com/tedante/laravel-10-base/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/tedante/laravel-10-base/main/install-with-docker.sh | bash
 ```
 
 * Jump to step 4, to install the dependencies and run migration.
 
-## Installation via clone repository
+## Via clone repository
 
 1. clone the repository, then navigate to the project directory:
 ```bash
@@ -37,11 +37,11 @@ docker-compose up -d
 ```bash
 docker-compose exec app composer install
 docker-compose exec app php artisan key:generate
-docker compose exec app php artisan migrate
-docker compose exec app php artisan db:seed
+docker-compose exec app php artisan migrate
+docker-compose exec app php artisan db:seed
 ```
 
-1. You can access it at [http://localhost:8000](http://localhost:8000).
+5. You can access it at [http://localhost:8000](http://localhost:8000).
 
 
 ## License
