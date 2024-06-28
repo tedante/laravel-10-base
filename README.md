@@ -1,12 +1,50 @@
-# Laravel 10 Fresh Install with Docker Compose File
+# Laravel 10 Fresh Install
 
-This is a fresh install of [Laravel](https://laravel.com/) 10 with a docker-compose file. This is a simple way to get a Laravel 10 project up and running with Docker.
+This is a fresh install of [Laravel](https://laravel.com/) with some feature.
 
-# Installation with Docker
+## Installation Without Docker
+
+To get started, you will need to have [PHP](https://www.php.net/), [Composer](https://getcomposer.org/), and database like [MySQL](https://www.mysql.com/) installed on your machine. Once you have these installed, you can follow the steps below.
+
+### Via Bash Script
+
+* Run this on your terminal 
+```bash
+curl -s https://raw.githubusercontent.com/tedante/laravel-10-base/main/install.sh | bash
+```
+
+### Via clone repository
+
+1. clone the repository, then navigate to the project directory:
+```bash
+git clone git@github.com:tedante/laravel-10-base.git
+```
+
+2. copy the `.env.example` file to `.env` and update the environment variables as needed:
+```bash
+cp .env.example .env
+```
+
+3. run the following command to install the dependencies:
+```bash
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+```
+
+4. run the following command to start the development server:
+```bash
+php artisan serve
+```
+
+5. You can access it at [http://localhost:8000](http://localhost:8000).
+
+## Installation with Docker
 
 To get started, you will need to have [Docker](https://www.docker.com/) installed on your machine. Once you have Docker installed, you can follow the steps below.
 
-## Via Bash Script
+### Via Bash Script
 
 * Run this on your terminal 
 ```bash
@@ -15,7 +53,7 @@ curl -s https://raw.githubusercontent.com/tedante/laravel-10-base/main/install-w
 
 * Jump to step 4, to install the dependencies and run migration.
 
-## Via clone repository
+### Via clone repository
 
 1. clone the repository, then navigate to the project directory:
 ```bash
